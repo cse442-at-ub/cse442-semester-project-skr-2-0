@@ -3,6 +3,8 @@ package com.example.myfirstapp;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.myfirstapp.ui.home.TestDate;
+import com.example.myfirstapp.ui.home.TestPage;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -41,6 +43,7 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home,R.id.nav_logout)
+                R.id.nav_home,R.id.nav_test,R.id.nav_share,R.id.nav_print,R.id.nav_logout)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -48,6 +51,7 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
         NavigationUI.setupWithNavController(navigationView, navController);
 
         navigationView.setNavigationItemSelectedListener(this);
+
 
     }
 
@@ -72,9 +76,15 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
             Intent in=new Intent(Main3Activity.this,MainActivity.class);
             startActivity(in);
         }
+        if(i.getItemId()==R.id.nav_test){
+            Intent out=new Intent(Main3Activity.this, TestPage.class);
+            startActivity(out);
+        }
 
         return true;
     }
+
+
 
 
 }

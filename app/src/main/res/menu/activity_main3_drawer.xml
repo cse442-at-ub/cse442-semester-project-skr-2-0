@@ -13,6 +13,23 @@
             android:id="@+id/nav.logout"
             android:icon="@android:drawable/ic_delete"
             android:title="@string/logout" />
+            android:id="@+id/nav.test"
+            android:icon="@android:drawable/btn_plus"
+            android:title="Exams" />
+        <item
+            android:id="@+id/nav.print"
+            android:icon="@android:drawable/btn_plus"
+            android:title="Print" />
+        <item
+            android:id="@+id/nav.share"
+            android:icon="@android:drawable/btn_plus"
+            android:title="Share" />
+        <item
+            android:id="@+id/nav.logout"
+            android:icon="@android:drawable/ic_delete"
+            android:title="@string/logout" />
+
+
     </group>
 
 </menu>
