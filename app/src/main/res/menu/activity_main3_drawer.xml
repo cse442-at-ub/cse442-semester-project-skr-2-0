@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav.logout"
+            android:icon="@android:drawable/ic_delete"
+            android:title="@string/logout" />
+            android:id="@+id/nav.test"
+            android:icon="@android:drawable/btn_plus"
+            android:title="Exams" />
+        <item
+            android:id="@+id/nav.print"
+            android:icon="@android:drawable/btn_plus"
+            android:title="Print" />
+        <item
+            android:id="@+id/nav.share"
+            android:icon="@android:drawable/btn_plus"
+            android:title="Share" />
+        <item
+            android:id="@+id/nav.logout"
+            android:icon="@android:drawable/ic_delete"
+            android:title="@string/logout" />
+
+
+    </group>
+
+</menu>
