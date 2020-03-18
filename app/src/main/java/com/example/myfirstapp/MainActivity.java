@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startIntent = new Intent(getApplicationContext(), Main2Activity.class); //Main2Activity is home page
                 // Main2Activity is home page
                 Intent startIntent = new Intent(getApplicationContext(), Main3Activity.class);
                 startActivity(startIntent);
