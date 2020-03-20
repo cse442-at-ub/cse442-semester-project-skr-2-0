@@ -42,7 +42,6 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home,R.id.nav_logout)
                 R.id.nav_home,R.id.nav_test,R.id.nav_share,R.id.nav_print,R.id.nav_logout)
                 .setDrawerLayout(drawer)
                 .build();

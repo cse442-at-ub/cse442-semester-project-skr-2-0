@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.myfirstapp.ui.home.TestPage;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Main2Activity is home page
+                // Main3Activity is home page
                 Intent startIntent = new Intent(getApplicationContext(), Main3Activity.class);
                 startActivity(startIntent);
             }
