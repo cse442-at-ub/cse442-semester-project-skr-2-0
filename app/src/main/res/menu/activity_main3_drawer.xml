@@ -10,9 +10,6 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav.logout"
-            android:icon="@android:drawable/ic_delete"
-            android:title="@string/logout" />
             android:id="@+id/nav.test"
             android:icon="@android:drawable/btn_plus"
             android:title="Exams" />
