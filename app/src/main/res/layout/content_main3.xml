@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/app_bar_main">
+    tools:showIn="@layout/app_bar_main3">
 
     <fragment
         android:id="@+id/nav_host_fragment"
@@ -27,10 +27,12 @@
         android:id="@+id/textView22"
         android:layout_width="0dp"
         android:layout_height="20dp"
-        android:text="TextView"
+        android:text="CurrentDate"
+        android:background="#FFFF00"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/nav_host_fragment"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+         />
 
     <LinearLayout
         android:id="@+id/linearLayout"
