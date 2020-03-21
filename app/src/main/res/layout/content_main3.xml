@@ -1,0 +1,1562 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/app_bar_main3">
+
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/mobile_navigation" />
+
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:text="CurrentDate"
+        android:background="#FFFF00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/nav_host_fragment"
+        app:layout_constraintTop_toTopOf="parent"
+         />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        app:layout_constraintEnd_toEndOf="@+id/nav_host_fragment"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/nav_host_fragment"
+        app:layout_constraintTop_toBottomOf="@+id/textView22">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="38dp"
+            android:layout_height="19dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/Monday"
+            android:layout_width="53dp"
+            android:layout_height="19dp"
+            android:baselineAligned="false"
+            android:gravity="center_horizontal"
+            android:text="@string/mon" />
+
+        <TextView
+            android:id="@+id/Tuesday"
+            android:layout_width="53dp"
+            android:layout_height="19dp"
+            android:gravity="center_horizontal"
+            android:text="@string/tue" />
+
+        <TextView
+            android:id="@+id/Wednesday"
+            android:layout_width="53dp"
+            android:layout_height="19dp"
+            android:gravity="center_horizontal"
+            android:text="@string/wed" />
+
+        <TextView
+            android:id="@+id/Thursday"
+            android:layout_width="53dp"
+            android:layout_height="19dp"
+            android:gravity="center_horizontal"
+            android:text="@string/thu" />
+
+        <TextView
+            android:id="@+id/Friday"
+            android:layout_width="53dp"
+            android:layout_height="19dp"
+            android:gravity="center_horizontal"
+            android:text="@string/fri" />
+
+        <TextView
+            android:id="@+id/Saturday"
+            android:layout_width="53dp"
+            android:layout_height="19dp"
+            android:gravity="center_horizontal"
+            android:text="@string/sat" />
+
+        <TextView
+            android:id="@+id/Sunday"
+            android:layout_width="53dp"
+            android:layout_height="19dp"
+            android:gravity="center_horizontal"
+            android:text="@string/sun" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/nav_host_fragment"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/Time"
+                android:layout_width="38dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/Eight"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="8:00" />
+
+                <TextView
+                    android:id="@+id/EightHalf"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="8:30" />
+
+
+                <TextView
+                    android:id="@+id/Nine"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="9:00" />
+
+                <TextView
+                    android:id="@+id/NineHalf"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="9:30" />
+
+                <TextView
+                    android:id="@+id/Ten"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="10:00" />
+
+                <TextView
+                    android:id="@+id/TenHalf"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="10:30" />
+
+                <TextView
+                    android:id="@+id/Eleven"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="11:00" />
+
+                <TextView
+                    android:id="@+id/ElevenHalf"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="11:30" />
+
+                <TextView
+                    android:id="@+id/TwelveP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="12:00" />
+
+                <TextView
+                    android:id="@+id/TwelveHalfP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="12:30" />
+
+                <TextView
+                    android:id="@+id/oneP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="13:00" />
+
+                <TextView
+                    android:id="@+id/oneHalfP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="13:30" />
+
+                <TextView
+                    android:id="@+id/twoP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="14:00" />
+
+                <TextView
+                    android:id="@+id/twoHalfP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="14:30" />
+
+                <TextView
+                    android:id="@+id/ThreeP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="15:00" />
+
+                <TextView
+                    android:id="@+id/ThreeHalfP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="15:30" />
+
+                <TextView
+                    android:id="@+id/FourP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="16:00" />
+
+                <TextView
+                    android:id="@+id/fourHalfP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="16:30" />
+
+                <TextView
+                    android:id="@+id/FiveP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="17:00" />
+
+                <TextView
+                    android:id="@+id/FiveHalfP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="17:30" />
+
+                <TextView
+                    android:id="@+id/SixP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="18:00" />
+
+                <TextView
+                    android:id="@+id/SixHalfP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="18:30" />
+
+                <TextView
+                    android:id="@+id/SevenP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="19:00" />
+
+                <TextView
+                    android:id="@+id/SevenHalfP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="19:30" />
+
+                <TextView
+                    android:id="@+id/EightP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="20:00" />
+
+                <TextView
+                    android:id="@+id/EightHalfP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="20:30" />
+
+                <TextView
+                    android:id="@+id/NineP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="21:00" />
+
+                <TextView
+                    android:id="@+id/NineHalfP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="21:30" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/MonCourse"
+                android:layout_width="53dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="81dp"
+                tools:layout_editor_absoluteY="-100dp">
+
+                <Button
+                    android:id="@+id/EightMon"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/EightHalfMon"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/NineMon"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/NineHalfMon"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/TenMon"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/TenHalfMon"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/ElevenMon"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/ElevenHalfMon"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/TwelvePMon"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/TwelveHalfPMon"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/onePMon"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/oneHalfPMon"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/twoPMon"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/twoHalfPMon"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/ThreePMon"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/ThreeHalfPMon"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/FourPMon"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/fourHalfPMon"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/FivePMon"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/FiveHalfPMon"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/SixPMon"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/SixHalfPMon"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/SevenPMon"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/SevenHalfPMon"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/EightPMon"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/EightHalfPMon"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/NinePMon"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/NineHalfPMon"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/TueCourse"
+                android:layout_width="53dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="81dp"
+                tools:layout_editor_absoluteY="-100dp">
+
+                <Button
+                    android:id="@+id/EightTue"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/EightHalfTue"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/NineTue"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/NineHalfTue"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/TenTue"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/TenHalfTue"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/ElevenTue"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/ElevenHalfTue"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/TwelvePTue"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/TwelveHalfPTue"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/onePTue"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/oneHalfPTue"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/twoPTue"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/twoHalfPTue"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/ThreePTue"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/ThreeHalfPTue"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/FourPTue"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/fourHalfPTue"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/FivePTue"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/FiveHalfPTue"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/SixPTue"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/SixHalfPTue"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/SevenPTue"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/SevenHalfPTue"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/EightPTue"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/EightHalfPTue"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/NinePTue"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/NineHalfPTue"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/WedCourse"
+                android:layout_width="53dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="81dp"
+                tools:layout_editor_absoluteY="-100dp">
+
+                <Button
+                    android:id="@+id/EightTWed"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/EightHalfWed"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/NineWed"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/NineHalfWed"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/TenTueWed"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/TenHalfWed"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/ElevenWed"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/ElevenHalfWed"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/TwelvePWed"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/TwelveHalfPWed"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/onePWed"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/oneHalfPWed"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/twoPWed"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/twoHalfPWed"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/ThreePWed"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/ThreeHalfPWed"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/FourPWed"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/fourHalfPWed"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/FivePWed"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/FiveHalfPWed"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/SixPWed"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/SixHalfPWed"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/SevenPWed"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/SevenHalfPWed"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/EightPWed"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/EightHalfPWed"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/NinePWed"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/NineHalfPWed"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ThuCourse"
+                android:layout_width="53dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="81dp"
+                tools:layout_editor_absoluteY="-100dp">
+
+                <Button
+                    android:id="@+id/EightThu"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/EightHalfThu"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/NineThu"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/NineHalfThu"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/TenThu"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/TenHalfThu"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/ElevenThu"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/ElevenHalfThu"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/TwelvePThu"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/TwelveHalfPThu"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/onePThu"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/oneHalfPThu"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/twoPThu"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/twoHalfPThu"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/ThreePThu"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/ThreeHalfPThu"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/FourPThu"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/fourHalfPThu"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/FivePThu"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/FiveHalfPThu"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/SixPThu"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/SixHalfPThu"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/SevenPThu"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/SevenHalfPThu"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/EightPThu"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/EightHalfPThu"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/NinePThu"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/NineHalfPThu"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/FriCourse"
+                android:layout_width="53dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="81dp"
+                tools:layout_editor_absoluteY="-100dp">
+
+                <Button
+                    android:id="@+id/EightFri"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/EightHalfFri"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/NineFri"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/NineHalfFri"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/TenFri"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/TenHalfFri"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/ElevenFri"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/ElevenHalfFri"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/TwelvePFri"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/TwelveHalfPFri"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/onePFri"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/oneHalfPFri"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/twoPFri"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/twoHalfPFri"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/ThreePFri"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/ThreeHalfPFri"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/FourPFri"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/fourHalfPFri"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/FivePFri"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/FiveHalfPFri"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/SixPFri"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/SixHalfPFri"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/SevenPFri"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/SevenHalfPFri"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/EightPFri"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/EightHalfPFri"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/NinePFri"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/NineHalfPFri"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/SatCourse"
+                android:layout_width="53dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="81dp"
+                tools:layout_editor_absoluteY="-100dp">
+
+                <Button
+                    android:id="@+id/EightSat"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/EightHalfSat"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/NineSat"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/NineHalfSat"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/TenSat"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/TenHalfSat"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/ElevenSat"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/ElevenHalfSat"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/TwelvePSat"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/TwelveHalfPSat"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/onePSat"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/oneHalfPSat"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/twoPSat"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/twoHalfPSat"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/ThreePSat"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/ThreeHalfPSat"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/FourPSat"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/fourHalfPSat"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/FivePSat"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/FiveHalfPSat"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/SixPSat"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/SixHalfPSat"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/SevenPSat"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/SevenHalfPSat"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/EightPSat"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/EightHalfPSat"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/NinePSat"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/NineHalfPSat"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/SunCourse"
+                android:layout_width="53dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="81dp"
+                tools:layout_editor_absoluteY="-100dp">
+
+                <Button
+                    android:id="@+id/EightSun"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/EightHalfSun"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/NineSun"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/NineHalfSun"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/TenSun"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/TenHalfSun"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/ElevenSun"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/ElevenHalfSun"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/TwelvePSun"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/TwelveHalfPSun"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/onePSun"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/oneHalfPSun"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/twoPSun"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/twoHalfPSun"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/ThreePSun"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/ThreeHalfPSun"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/FourPSun"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/fourHalfPSun"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/FivePSun"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/FiveHalfPSun"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/SixPSun"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/SixHalfPSun"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/SevenPSun"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/SevenHalfPSun"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/EightPSun"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/EightHalfPSun"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/NinePSun"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/NineHalfPSun"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
