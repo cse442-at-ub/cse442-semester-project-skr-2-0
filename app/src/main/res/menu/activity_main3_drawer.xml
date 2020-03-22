@@ -7,19 +7,19 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@android:drawable/btn_star"
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav.test"
-            android:icon="@android:drawable/btn_plus"
+            android:icon="@android:drawable/ic_dialog_info"
             android:title="Exams" />
         <item
             android:id="@+id/nav.print"
-            android:icon="@android:drawable/btn_plus"
+            android:icon="@android:drawable/ic_menu_view"
             android:title="Print" />
         <item
             android:id="@+id/nav.share"
-            android:icon="@android:drawable/btn_plus"
+            android:icon="@android:drawable/ic_menu_share"
             android:title="Share" />
         <item
             android:id="@+id/nav.logout"

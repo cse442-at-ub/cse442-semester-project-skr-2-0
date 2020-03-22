@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Schedule"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -32,7 +33,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/nav_host_fragment"
         app:layout_constraintTop_toTopOf="parent"
-         />
+        />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -440,12 +441,6 @@
                     android:text="" />
 
                 <Button
-                    android:id="@+id/FiveHalfPMon"
-                    android:layout_width="match_parent"
-                    android:layout_height="38dp"
-                    android:text="" />
-
-                <Button
                     android:id="@+id/SixPMon"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
@@ -489,6 +484,12 @@
 
                 <Button
                     android:id="@+id/NineHalfPMon"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/FiveHalfPMon"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />

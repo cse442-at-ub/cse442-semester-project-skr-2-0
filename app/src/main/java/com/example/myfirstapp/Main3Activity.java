@@ -3,6 +3,7 @@ package com.example.myfirstapp;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
 import android.os.Bundle;
 
 import com.example.myfirstapp.ui.home.TestDate;
@@ -95,17 +96,27 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
         }
 
         if(i.getItemId()==R.id.nav_print){
-            doPrint();
+//          View view = findViewById(R.id.textView22);
+            View view = findViewById(R.id.Schedule);
+//            view.setDrawingCacheEnabled(true);
+            Bitmap bitmap = ViewToBitmap(view);//Bitmap.createBitmap(view.getDrawingCache());
+            PrintHelper photoPrinter = new PrintHelper(this);
+            photoPrinter.setScaleMode(PrintHelper.SCALE_MODE_FIT);
+//           Bitmap bi = BitmapFactory.decodeResource(getResources(),R.drawable.kitten);
+            photoPrinter.printBitmap("Class Schedule", bitmap);
+            Toast.makeText(getApplicationContext(),"Loading",Toast.LENGTH_SHORT).show();
+            //  sample code from android studio documentation https://developer.android.com/training/printing/photos
         }
 
         return true;
     }
-
-    private void doPrint(){
-        PrintHelper photoPrinter = new PrintHelper(this);
-        photoPrinter.setScaleMode(PrintHelper.SCALE_MODE_FIT);
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.kitten);
-        photoPrinter.printBitmap("Class Schedule", bitmap);
-        Toast.makeText(getApplicationContext(),"Select a printer",Toast.LENGTH_SHORT).show();
+    private Bitmap ViewToBitmap(View view) {
+        Bitmap image;
+        image = Bitmap.createBitmap(view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas;
+        canvas = new Canvas(image);
+        view.draw(canvas);
+        return image;
     }
+
 }
