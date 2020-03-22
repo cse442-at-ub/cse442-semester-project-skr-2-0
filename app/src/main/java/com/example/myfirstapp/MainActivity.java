@@ -25,5 +25,15 @@ public class MainActivity extends AppCompatActivity {               // login pag
                 startActivity(startIntent);
             }
         });
+
+        Button reg = (Button)findViewById(R.id.RegButton);
+        reg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               Intent i = new Intent(getApplicationContext(), Register.class);
+               startActivity(i);
+            }
+        });
+
     }
 }
