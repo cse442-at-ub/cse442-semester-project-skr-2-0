@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import com.example.myfirstapp.ui.home.TestPage;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {               // login page
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

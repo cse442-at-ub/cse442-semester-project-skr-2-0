@@ -1,6 +1,9 @@
 package com.example.myfirstapp;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
 import android.os.Bundle;
 
 import com.example.myfirstapp.ui.home.TestDate;
@@ -23,11 +26,17 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.print.PrintHelper;
 
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
-public class Main3Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+import java.text.DateFormat;
+import java.util.Calendar;
+
+public class Main3Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{              // page for schedule
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -51,7 +60,13 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
 
         navigationView.setNavigationItemSelectedListener(this);
 
-
+        // get current date and set it to text view 22 (current date) on class schedule page;
+        Calendar cal;
+        cal = Calendar.getInstance();
+        String Date ;
+        Date = DateFormat.getDateInstance().format(cal.getTime());
+        TextView textview = findViewById(R.id.textView22);
+        textview.setText(Date);
     }
 
     @Override
@@ -76,14 +91,32 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
             startActivity(in);
         }
         if(i.getItemId()==R.id.nav_test){
-            Intent out=new Intent(Main3Activity.this, TestPage.class);
-            startActivity(out);
+            Intent in=new Intent(Main3Activity.this,TestPage.class);
+            startActivity(in);
+        }
+
+        if(i.getItemId()==R.id.nav_print){
+//          View view = findViewById(R.id.textView22);
+            View view = findViewById(R.id.Schedule);
+//            view.setDrawingCacheEnabled(true);
+            Bitmap bitmap = ViewToBitmap(view);//Bitmap.createBitmap(view.getDrawingCache());
+            PrintHelper photoPrinter = new PrintHelper(this);
+            photoPrinter.setScaleMode(PrintHelper.SCALE_MODE_FIT);
+//           Bitmap bi = BitmapFactory.decodeResource(getResources(),R.drawable.kitten);
+            photoPrinter.printBitmap("Class Schedule", bitmap);
+            Toast.makeText(getApplicationContext(),"Loading",Toast.LENGTH_SHORT).show();
+            //  sample code from android studio documentation https://developer.android.com/training/printing/photos
         }
 
         return true;
     }
-
-
-
+    private Bitmap ViewToBitmap(View view) {
+        Bitmap image;
+        image = Bitmap.createBitmap(view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas;
+        canvas = new Canvas(image);
+        view.draw(canvas);
+        return image;
+    }
 
 }
