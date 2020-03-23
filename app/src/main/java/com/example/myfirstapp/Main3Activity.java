@@ -67,7 +67,71 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
         Date = DateFormat.getDateInstance().format(cal.getTime());
         TextView textview = findViewById(R.id.textView22);
         textview.setText(Date);
+
+        // add button
+        Button addBtn = (Button)findViewById(R.id.addBtn);
+        addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent addIntent = new Intent(getApplicationContext(), Main2Activity.class);
+                startActivity(addIntent);
+            }
+        });
+        //add
+        if(getIntent().hasExtra("begin")){
+            String begin = getIntent().getExtras().getString("begin");
+            double beginTime = changeTime(begin);
+            if(beginTime < 8 || beginTime > 16.5){
+                beginTime = 8.0;
+            }
+
+            String end = getIntent().getExtras().getString("end");
+            double endTime = changeTime(end);
+
+            //System.out.println("time:"+ Double.toString(beginTime));
+            boolean checked = getIntent().getExtras().getBoolean("mwf");
+            if(checked) {
+                changeColor(beginTime, endTime, "Mon");
+                changeColor(beginTime, endTime, "Wed");
+                changeColor(beginTime, endTime, "Fri");
+            }
+            else {
+                changeColor(beginTime, endTime, "Tue");
+                changeColor(beginTime, endTime, "Thu");
+            }
+        }
     }
+    public double changeTime(String time){
+        double res;
+        if(time.contains(":")){
+            String[] hourMin = time.split(":");
+            int hour = Integer.parseInt(hourMin[0]);
+            double mins = Integer.parseInt(hourMin[1]);
+            if(mins != 0 && mins != 30){
+                mins = 0; // lazy coding
+            }
+            res = hour + mins / 60;
+        }
+        else{
+            res = Integer.parseInt(time);
+        }
+        return res;
+
+
+    }
+
+    public void changeColor(double begin, double end, String day ){
+        for (double i = begin; i < end; i = i + 0.5) {
+            String btnID = day + Double.toString(i);
+            //System.out.println(btnID);
+            //System.out.println(endTime);
+            int resID = getResources().getIdentifier(btnID, "id", getPackageName());
+            Button btn = (Button) findViewById(resID);
+            int red=0xffff0000;
+            btn.setBackgroundColor(red);
+        }
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
