@@ -15,41 +15,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/goToEditPage" />
-
-    <TextView
-        android:id="@+id/textView21"
-        android:layout_width="343dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="56dp"
-        android:text="Exam 3 TIme: March 25th 2020"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
-
-    <TextView
-        android:id="@+id/textView20"
-        android:layout_width="343dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="28dp"
-        android:text="Exam 2 TIme: Feb 4th 2020"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="191dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="28dp"
-        android:text="Date: Jan 25th 2020"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintTop_toBottomOf="@+id/goToAddPage" />
 
     <Button
-        android:id="@+id/goToEditPage"
+        android:id="@+id/goToAddPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#009688"
@@ -60,46 +29,24 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView12"
-        android:layout_width="254dp"
-        android:layout_height="78dp"
-        android:layout_marginTop="60dp"
-        android:text="Next Exam Date:"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="191dp"
-        android:layout_height="28dp"
-        android:text="Class: Math"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
-
-    <TextView
         android:id="@+id/textView17"
         android:layout_width="261dp"
         android:layout_height="96dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="64dp"
         android:text="Future Exam Dates:"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.006"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="343dp"
-        android:layout_height="29dp"
-        android:text="Exam 1 TIme: Jan 25th 2020"
-        android:textSize="18sp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/examList"
+        android:layout_width="409dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        app:layout_constraintTop_toBottomOf="@+id/textView17"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,7 +8,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.myfirstapp.ui.home.TestPage;
-public class MainActivity extends AppCompatActivity {
+
+public class MainActivity extends AppCompatActivity {               // login page
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,10 +20,20 @@ public class MainActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Main2Activity is home page
+                // Main3Activity is home page
                 Intent startIntent = new Intent(getApplicationContext(), Main3Activity.class);
                 startActivity(startIntent);
             }
         });
+
+        Button reg = (Button)findViewById(R.id.RegButton);
+        reg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               Intent i = new Intent(getApplicationContext(), Register.class);
+               startActivity(i);
+            }
+        });
+
     }
 }
