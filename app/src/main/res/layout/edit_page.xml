@@ -4,10 +4,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/edit_transition">
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/add_month"
         android:layout_width="72dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
@@ -16,11 +17,11 @@
         android:ems="10"
         android:hint="XX"
         android:inputType="date"
-        app:layout_constraintEnd_toStartOf="@+id/editText3"
+        app:layout_constraintEnd_toStartOf="@+id/add_day"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/add_year"
         android:layout_width="72dp"
         android:layout_height="48dp"
         android:layout_marginStart="56dp"
@@ -29,7 +30,7 @@
         android:ems="10"
         android:hint="XXXX"
         android:inputType="date"
-        app:layout_constraintStart_toEndOf="@+id/editText3"
+        app:layout_constraintStart_toEndOf="@+id/add_day"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
@@ -43,7 +44,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/add_className"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -97,7 +98,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/add_day"
         android:layout_width="72dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
@@ -113,10 +114,23 @@
         android:id="@+id/SubmitTest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="submit"
         android:text="Submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/edit_error_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Error:"
+        android:textColor="#FC0056"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/SubmitTest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_day"
+        app:layout_constraintVertical_bias="0.865" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
