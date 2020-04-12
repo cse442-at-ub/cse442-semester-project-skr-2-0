@@ -79,12 +79,13 @@ public class Main2Activity extends AppCompatActivity {
                         Toast.makeText(Main2Activity.this,"You can't end before you start, try again",Toast.LENGTH_LONG).show();
                     }else if(begin == end){
                         Toast.makeText(Main2Activity.this,"The Start time should not be the same as the End time",Toast.LENGTH_LONG).show();
-                    }else if(begin < 8.0 || begin > 21.0 || end <8.0 || end > 21.0){
+                    }else if(begin < 8.0 || begin > 21.5 || end <8.0 || end > 21.5){
                         Toast.makeText(Main2Activity.this,"Exceed time limit",Toast.LENGTH_SHORT).show();
                     }else{
                         Intent submitIntent = new Intent(getApplicationContext(), Main3Activity.class);
                         Classinfo classinfo = new Classinfo(name,room,day,begin,end,ismwf,istt);
                         classInfoArrayList.add(classinfo);
+                        double bein = classinfo.getStart();
                         startActivity(submitIntent);
                     }
 

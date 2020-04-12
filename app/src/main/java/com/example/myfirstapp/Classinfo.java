@@ -14,7 +14,7 @@ public class Classinfo implements Serializable {
 
 
     public Classinfo(String className, String classRoom,int day,double begin,double over,int mwf,int tt){
-        this.className = className;this.classRoom = classRoom;this.day = day;this.over = over;this.mwf=mwf;this.tt = tt;
+        this.className = className;this.classRoom = classRoom;this.day = day;this.begin=begin;this.over = over;this.mwf=mwf;this.tt = tt;
     }
 
     public String getClassName(){
