@@ -12,7 +12,7 @@ public class ClassDataBase extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table courses(" +
+        db.execSQL("create table class(" +
                 "id double primary key autoincrement," +
                 "class_name text," +
                 "class_room text," +

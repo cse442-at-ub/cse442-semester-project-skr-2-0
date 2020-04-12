@@ -7,13 +7,13 @@ public class Classinfo implements Serializable {
     private String className;
     private String classRoom;
     private int day;
-    private double start;
+    private double begin;
     private double over;
-    private boolean mwf;
-    private boolean tt;
+    private int mwf;
+    private int tt;
 
 
-    public Classinfo(String className, String classRoom,int day,double start,double over,boolean mwf,boolean tt){
+    public Classinfo(String className, String classRoom,int day,double begin,double over,int mwf,int tt){
         this.className = className;this.classRoom = classRoom;this.day = day;this.over = over;this.mwf=mwf;this.tt = tt;
     }
 
@@ -35,11 +35,9 @@ public class Classinfo implements Serializable {
     public void setDay( int day){
         this.day = day;
     }
-    public double getStart(){
-        return this.start;
-    }
+    public double getStart(){ return begin; }
     public void setStart( double start){
-        this.start = start;
+        begin = start;
     }
     public double getOver(){
         return this.over;
@@ -47,9 +45,9 @@ public class Classinfo implements Serializable {
     public void setOver(double over){
         this.over = over;
     }
-    public boolean getMwf(){return this.mwf;}
-    public void setMwf(boolean Mwf){this.mwf = Mwf;}
-    public boolean getTT(){return this.tt;}
-    public void setTT(boolean TT){this.tt = TT;}
+    public int getMwf(){return this.mwf;}
+    public void setMwf(int Mwf){this.mwf = Mwf;}
+    public int getTT(){return this.tt;}
+    public void setTT(int TT){this.tt = TT;}
 
 }
