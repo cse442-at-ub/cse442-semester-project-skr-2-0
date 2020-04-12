@@ -40,6 +40,9 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
 
     private AppBarConfiguration mAppBarConfiguration;
 
+    private ClassDataBase db= new ClassDataBase(this,"classDateBase.qb",null,1);
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,7 +84,7 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
         if(getIntent().hasExtra("begin")){
             String begin = getIntent().getExtras().getString("begin");
             double beginTime = changeTime(begin);
-            if(beginTime < 8 || beginTime > 16.5){
+            if(beginTime < 8 || beginTime > 16.50){
                 beginTime = 8.0;
             }
 
@@ -100,6 +103,8 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
                 changeColor(beginTime, endTime, "Thu");
             }
         }
+
+
     }
     public double changeTime(String time){
         double res;
@@ -160,13 +165,10 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
         }
 
         if(i.getItemId()==R.id.nav_print){
-//          View view = findViewById(R.id.textView22);
             View view = findViewById(R.id.Schedule);
-//            view.setDrawingCacheEnabled(true);
-            Bitmap bitmap = ViewToBitmap(view);//Bitmap.createBitmap(view.getDrawingCache());
+            Bitmap bitmap = ViewToBitmap(view);
             PrintHelper photoPrinter = new PrintHelper(this);
             photoPrinter.setScaleMode(PrintHelper.SCALE_MODE_FIT);
-//           Bitmap bi = BitmapFactory.decodeResource(getResources(),R.drawable.kitten);
             photoPrinter.printBitmap("Class Schedule", bitmap);
             Toast.makeText(getApplicationContext(),"Loading",Toast.LENGTH_SHORT).show();
             //  sample code from android studio documentation https://developer.android.com/training/printing/photos
