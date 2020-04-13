@@ -28,6 +28,7 @@
         android:layout_width="0dp"
         android:layout_height="20dp"
         android:background="#FFEB3B"
+        android:gravity="center"
         android:text="CurrentDate"
         android:textColor="#030303"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,289 +36,221 @@
         app:layout_constraintStart_toStartOf="@+id/nav_host_fragment"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/Time"
-        android:layout_width="38dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toStartOf="@+id/scrollView3"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/nav_host_fragment"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout">
-
-        <TextView
-            android:id="@+id/Eight"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:gravity="center"
-            android:text="8:00" />
-
-        <TextView
-            android:id="@+id/EightHalf"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:gravity="center"
-            android:text="8:30" />
-
-
-        <TextView
-            android:id="@+id/Nine"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:gravity="center"
-            android:text="9:00" />
-
-        <TextView
-            android:id="@+id/NineHalf"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:gravity="center"
-            android:text="9:30" />
-
-        <TextView
-            android:id="@+id/Ten"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:gravity="center"
-            android:text="10:00" />
-
-        <TextView
-            android:id="@+id/TenHalf"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:gravity="center"
-            android:text="10:30" />
-
-        <TextView
-            android:id="@+id/Eleven"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:gravity="center"
-            android:text="11:00" />
-
-        <TextView
-            android:id="@+id/ElevenHalf"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:gravity="center"
-            android:text="11:30" />
-
-        <TextView
-            android:id="@+id/TwelveP"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:gravity="center"
-            android:text="12:00" />
-
-        <TextView
-            android:id="@+id/TwelveHalfP"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:gravity="center"
-            android:text="12:30" />
-
-        <TextView
-            android:id="@+id/oneP"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:gravity="center"
-            android:text="13:00" />
-
-        <TextView
-            android:id="@+id/oneHalfP"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:gravity="center"
-            android:text="13:30" />
-
-        <TextView
-            android:id="@+id/twoP"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:gravity="center"
-            android:text="14:00" />
-
-        <TextView
-            android:id="@+id/twoHalfP"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:gravity="center"
-            android:text="14:30" />
-
-        <TextView
-            android:id="@+id/ThreeP"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:gravity="center"
-            android:text="15:00" />
-
-        <TextView
-            android:id="@+id/ThreeHalfP"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:gravity="center"
-            android:text="15:30" />
-
-        <TextView
-            android:id="@+id/FourP"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:gravity="center"
-            android:text="16:00" />
-
-        <TextView
-            android:id="@+id/fourHalfP"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:gravity="center"
-            android:text="16:30" />
-
-        <TextView
-            android:id="@+id/FiveP"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:gravity="center"
-            android:text="17:00" />
-
-        <TextView
-            android:id="@+id/FiveHalfP"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:gravity="center"
-            android:text="17:30" />
-
-        <TextView
-            android:id="@+id/SixP"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:gravity="center"
-            android:text="18:00" />
-
-        <TextView
-            android:id="@+id/SixHalfP"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:gravity="center"
-            android:text="18:30" />
-
-        <TextView
-            android:id="@+id/SevenP"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:gravity="center"
-            android:text="19:00" />
-
-        <TextView
-            android:id="@+id/SevenHalfP"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:gravity="center"
-            android:text="19:30" />
-
-        <TextView
-            android:id="@+id/EightP"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:gravity="center"
-            android:text="20:00" />
-
-        <TextView
-            android:id="@+id/EightHalfP"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:gravity="center"
-            android:text="20:30" />
-
-        <TextView
-            android:id="@+id/NineP"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:gravity="center"
-            android:text="21:00" />
-
-        <TextView
-            android:id="@+id/NineHalfP"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:gravity="center"
-            android:text="21:30" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="19dp"
-        app:layout_constraintEnd_toEndOf="@+id/nav_host_fragment"
-        app:layout_constraintHorizontal_bias="0.95"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/nav_host_fragment"
         app:layout_constraintTop_toBottomOf="@+id/textView22">
-
-        <TextView
-            android:id="@+id/Monday"
-            android:layout_width="53dp"
-            android:layout_height="19dp"
-            android:baselineAligned="false"
-            android:gravity="center_horizontal"
-            android:text="@string/mon" />
-
-        <TextView
-            android:id="@+id/Tuesday"
-            android:layout_width="53dp"
-            android:layout_height="19dp"
-            android:gravity="center_horizontal"
-            android:text="@string/tue" />
-
-        <TextView
-            android:id="@+id/Wednesday"
-            android:layout_width="53dp"
-            android:layout_height="19dp"
-            android:gravity="center_horizontal"
-            android:text="@string/wed" />
-
-        <TextView
-            android:id="@+id/Thursday"
-            android:layout_width="53dp"
-            android:layout_height="19dp"
-            android:gravity="center_horizontal"
-            android:text="@string/thu" />
-
-        <TextView
-            android:id="@+id/Friday"
-            android:layout_width="53dp"
-            android:layout_height="19dp"
-            android:gravity="center_horizontal"
-            android:text="@string/fri" />
-
-        <TextView
-            android:id="@+id/Saturday"
-            android:layout_width="53dp"
-            android:layout_height="19dp"
-            android:gravity="center_horizontal"
-            android:text="@string/sat" />
-
-        <TextView
-            android:id="@+id/Sunday"
-            android:layout_width="53dp"
-            android:layout_height="19dp"
-            android:gravity="center_horizontal"
-            android:text="@string/sun" />
-
-    </LinearLayout>
-
-    <ScrollView
-        android:id="@+id/scrollView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        app:layout_constraintStart_toStartOf="@+id/nav_host_fragment"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/Time"
+                android:layout_width="38dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/Eight"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="8:00" />
+
+                <TextView
+                    android:id="@+id/EightHalf"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="8:30" />
+
+
+                <TextView
+                    android:id="@+id/Nine"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="9:00" />
+
+                <TextView
+                    android:id="@+id/NineHalf"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="9:30" />
+
+                <TextView
+                    android:id="@+id/Ten"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="10:00" />
+
+                <TextView
+                    android:id="@+id/TenHalf"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="10:30" />
+
+                <TextView
+                    android:id="@+id/Eleven"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="11:00" />
+
+                <TextView
+                    android:id="@+id/ElevenHalf"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="11:30" />
+
+                <TextView
+                    android:id="@+id/TwelveP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="12:00" />
+
+                <TextView
+                    android:id="@+id/TwelveHalfP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="12:30" />
+
+                <TextView
+                    android:id="@+id/oneP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="13:00" />
+
+                <TextView
+                    android:id="@+id/oneHalfP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="13:30" />
+
+                <TextView
+                    android:id="@+id/twoP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="14:00" />
+
+                <TextView
+                    android:id="@+id/twoHalfP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="14:30" />
+
+                <TextView
+                    android:id="@+id/ThreeP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="15:00" />
+
+                <TextView
+                    android:id="@+id/ThreeHalfP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="15:30" />
+
+                <TextView
+                    android:id="@+id/FourP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="16:00" />
+
+                <TextView
+                    android:id="@+id/fourHalfP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="16:30" />
+
+                <TextView
+                    android:id="@+id/FiveP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="17:00" />
+
+                <TextView
+                    android:id="@+id/FiveHalfP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="17:30" />
+
+                <TextView
+                    android:id="@+id/SixP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="18:00" />
+
+                <TextView
+                    android:id="@+id/SixHalfP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="18:30" />
+
+                <TextView
+                    android:id="@+id/SevenP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="19:00" />
+
+                <TextView
+                    android:id="@+id/SevenHalfP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="19:30" />
+
+                <TextView
+                    android:id="@+id/EightP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="20:00" />
+
+                <TextView
+                    android:id="@+id/EightHalfP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="20:30" />
+
+                <TextView
+                    android:id="@+id/NineP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="21:00" />
+
+                <TextView
+                    android:id="@+id/NineHalfP"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="21:30" />
+
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/MonCourse"
@@ -326,6 +259,14 @@
                 android:orientation="vertical"
                 tools:layout_editor_absoluteX="81dp"
                 tools:layout_editor_absoluteY="-100dp">
+
+                <TextView
+                    android:id="@+id/Monday"
+                    android:layout_width="53dp"
+                    android:layout_height="19dp"
+                    android:baselineAligned="false"
+                    android:gravity="center_horizontal"
+                    android:text="@string/mon" />
 
                 <Button
                     android:id="@+id/Mon8.0"
@@ -504,6 +445,13 @@
                 tools:layout_editor_absoluteX="81dp"
                 tools:layout_editor_absoluteY="-100dp">
 
+                <TextView
+                    android:id="@+id/Tuesday"
+                    android:layout_width="53dp"
+                    android:layout_height="19dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/tue" />
+
                 <Button
                     android:id="@+id/Tue8.0"
                     android:layout_width="match_parent"
@@ -613,6 +561,30 @@
                     android:text="" />
 
                 <Button
+                    android:id="@+id/Tue17.0"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/Tue17.5"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/Tue18.0"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/Tue18.5"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
                     android:id="@+id/Tue19.0"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
@@ -656,6 +628,13 @@
                 android:orientation="vertical"
                 tools:layout_editor_absoluteX="81dp"
                 tools:layout_editor_absoluteY="-100dp">
+
+                <TextView
+                    android:id="@+id/Wednesday"
+                    android:layout_width="53dp"
+                    android:layout_height="19dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/wed" />
 
                 <Button
                     android:id="@+id/Wed8.0"
@@ -766,6 +745,30 @@
                     android:text="" />
 
                 <Button
+                    android:id="@+id/Wed17.0"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/Wed17.5"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/Wed18.0"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/Wed18.5"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
                     android:id="@+id/Wed19.0"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
@@ -809,6 +812,13 @@
                 android:orientation="vertical"
                 tools:layout_editor_absoluteX="81dp"
                 tools:layout_editor_absoluteY="-100dp">
+
+                <TextView
+                    android:id="@+id/Thursday"
+                    android:layout_width="53dp"
+                    android:layout_height="19dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/thu" />
 
                 <Button
                     android:id="@+id/Thu8.0"
@@ -919,6 +929,30 @@
                     android:text="" />
 
                 <Button
+                    android:id="@+id/Thu17.0"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/Thu17.5"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/Thu18.0"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/Thu18.5"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
                     android:id="@+id/Thu19.0"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
@@ -962,6 +996,13 @@
                 android:orientation="vertical"
                 tools:layout_editor_absoluteX="81dp"
                 tools:layout_editor_absoluteY="-100dp">
+
+                <TextView
+                    android:id="@+id/Friday"
+                    android:layout_width="53dp"
+                    android:layout_height="19dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/fri" />
 
                 <Button
                     android:id="@+id/Fri8.0"
@@ -1072,6 +1113,30 @@
                     android:text="" />
 
                 <Button
+                    android:id="@+id/Fri17.0"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/Fri17.5"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/Fri18.0"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/Fri18.5"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
                     android:id="@+id/Fri19.0"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
@@ -1115,6 +1180,13 @@
                 android:orientation="vertical"
                 tools:layout_editor_absoluteX="81dp"
                 tools:layout_editor_absoluteY="-100dp">
+
+                <TextView
+                    android:id="@+id/Saturday"
+                    android:layout_width="53dp"
+                    android:layout_height="19dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/sat" />
 
                 <Button
                     android:id="@+id/Sat8.0"
@@ -1225,6 +1297,30 @@
                     android:text="" />
 
                 <Button
+                    android:id="@+id/Sat17.0"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/Sat17.5"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/Sat18.0"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/Sat18.5"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
                     android:id="@+id/Sat19.0"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
@@ -1268,6 +1364,13 @@
                 android:orientation="vertical"
                 tools:layout_editor_absoluteX="81dp"
                 tools:layout_editor_absoluteY="-100dp">
+
+                <TextView
+                    android:id="@+id/Sunday"
+                    android:layout_width="53dp"
+                    android:layout_height="19dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/sun" />
 
                 <Button
                     android:id="@+id/Sun8.0"
@@ -1373,6 +1476,30 @@
 
                 <Button
                     android:id="@+id/Sun16.5"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/Sun17.0"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/Sun17.5"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/Sun18.0"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/Sun18.5"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />

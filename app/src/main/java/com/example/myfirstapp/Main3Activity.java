@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import com.example.myfirstapp.ui.home.TestDate;
@@ -84,6 +85,7 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
             }
         });
         //load db
+
         ArrayList<Classinfo> go= Main2Activity.giveMeTheList();
         if(!go.isEmpty()) {
             for (Classinfo classinfo : go) {
@@ -132,38 +134,40 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
         int tt = classinfo.getTT();
         int day = classinfo.getDay();
 
-        switch (day){
-            case 0:
-                    changeColor(begin,end,"Mon",classinfo);
-                    break;
-            case 1:
-                    changeColor(begin,end,"Tue",classinfo);
-                    break;
-            case 2:
-                    changeColor(begin,end,"Wed",classinfo);
-                    break;
-            case 3:
-                    changeColor(begin,end,"Thu",classinfo);
-                    break;
-            case 4:
-                    changeColor(begin,end,"Fri",classinfo);
-                    break;
-            case 5:
-                    changeColor(begin,end,"Sat",classinfo);
-                    break;
-            case 6:
-                    changeColor(begin,end,"Sun",classinfo);
-                    break;
-
-            default:
-                    break;
-        }
         if(mwf == 1){
             changeColor(begin,end,"Mon",classinfo);changeColor(begin,end,"Wed",classinfo);changeColor(begin,end,"Fri",classinfo);
         }
         if(tt == 1){
             changeColor(begin,end,"Tue",classinfo);
             changeColor(begin,end,"Thu",classinfo);
+        }
+        if(mwf ==0 && tt ==0){
+            switch (day) {
+                case 0:
+                    changeColor(begin, end, "Mon", classinfo);
+                    break;
+                case 1:
+                    changeColor(begin, end, "Tue", classinfo);
+                    break;
+                case 2:
+                    changeColor(begin, end, "Wed", classinfo);
+                    break;
+                case 3:
+                    changeColor(begin, end, "Thu", classinfo);
+                    break;
+                case 4:
+                    changeColor(begin, end, "Fri", classinfo);
+                    break;
+                case 5:
+                    changeColor(begin, end, "Sat", classinfo);
+                    break;
+                case 6:
+                    changeColor(begin, end, "Sun", classinfo);
+                    break;
+
+                default:
+                    break;
+            }
         }
 
     }
@@ -174,7 +178,7 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
             Button btn = (Button) findViewById(resID);
             btn.setText(classinfo.getClassName());
             btn.setTextColor(0xff000000);
-            btn.setBackgroundColor(0xffffff00); // yellow
+            btn.setBackgroundColor(0xffffff00);
         }
     }
 
