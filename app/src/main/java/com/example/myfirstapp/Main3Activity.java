@@ -1,9 +1,13 @@
 package com.example.myfirstapp;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import com.example.myfirstapp.ui.home.TestDate;
@@ -34,11 +38,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class Main3Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{              // page for schedule
 
     private AppBarConfiguration mAppBarConfiguration;
+
+    private ClassDataBase db= new ClassDataBase(this,"classDateBase.qb",null,1);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,58 +84,101 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
                 startActivity(addIntent);
             }
         });
-        //add
-        if(getIntent().hasExtra("begin")){
-            String begin = getIntent().getExtras().getString("begin");
-            double beginTime = changeTime(begin);
-            if(beginTime < 8 || beginTime > 16.5){
-                beginTime = 8.0;
-            }
+        //load db
 
-            String end = getIntent().getExtras().getString("end");
-            double endTime = changeTime(end);
-
-            //System.out.println("time:"+ Double.toString(beginTime));
-            boolean checked = getIntent().getExtras().getBoolean("mwf");
-            if(checked) {
-                changeColor(beginTime, endTime, "Mon");
-                changeColor(beginTime, endTime, "Wed");
-                changeColor(beginTime, endTime, "Fri");
-            }
-            else {
-                changeColor(beginTime, endTime, "Tue");
-                changeColor(beginTime, endTime, "Thu");
+        ArrayList<Classinfo> go= Main2Activity.giveMeTheList();
+        if(!go.isEmpty()) {
+            for (Classinfo classinfo : go) {
+                setClassView(classinfo);
             }
         }
     }
-    public double changeTime(String time){
-        double res;
-        if(time.contains(":")){
-            String[] hourMin = time.split(":");
-            int hour = Integer.parseInt(hourMin[0]);
-            double mins = Integer.parseInt(hourMin[1]);
-            if(mins != 0 && mins != 30){
-                mins = 0; // lazy coding
-            }
-            res = hour + mins / 60;
-        }
-        else{
-            res = Integer.parseInt(time);
-        }
-        return res;
 
+
+//    private void load(){
+//            Cursor cursor;
+//            SQLiteDatabase sqLiteDatabase = db.getWritableDatabase();
+//            if(true){
+//                cursor = sqLiteDatabase.rawQuery("select*from class",null);
+//            }
+//            if(cursor.moveToFirst()){
+//                String className = cursor.getString(cursor.getColumnIndex("class_name"));
+//                String classRoom= cursor.getString(cursor.getColumnIndex("class_room"));
+//                int weekly = cursor.getInt(cursor.getColumnIndex("dayinweek"));
+//                double start = cursor.getDouble(cursor.getColumnIndex("start"));
+//                double over = cursor.getDouble(cursor.getColumnIndex("over"));
+//                int mwf = cursor.getInt(cursor.getColumnIndex("mwf"));
+//                int tt = cursor.getInt(cursor.getColumnIndex("tt"));
+//                Classinfo classinfo = new Classinfo(className,classRoom,weekly,start,over,mwf,tt);
+//                classinfoArrayList.add(classinfo);
+//
+//                while(cursor.moveToNext()){
+//                    String className_ = cursor.getString(cursor.getColumnIndex("class_name"));
+//                    String classRoom_= cursor.getString(cursor.getColumnIndex("class_room"));
+//                    int weekly_ = cursor.getInt(cursor.getColumnIndex("dayinweek"));
+//                    double start_ = cursor.getDouble(cursor.getColumnIndex("start"));
+//                    double over_ = cursor.getDouble(cursor.getColumnIndex("over"));
+//                    int mwf_ = cursor.getInt(cursor.getColumnIndex("mwf"));
+//                    int tt_ = cursor.getInt(cursor.getColumnIndex("tt"));
+//                    Classinfo classinfo_ = new Classinfo(className_,classRoom_,weekly_,start_,over_,mwf_,tt_);
+//                    classinfoArrayList.add(classinfo_);
+//                }
+//            }
+//                cursor.close();
+//        }
+
+    public void setClassView(Classinfo classinfo){
+        double begin = classinfo.getStart();
+        double end = classinfo.getOver();
+        int mwf = classinfo.getMwf();
+        int tt = classinfo.getTT();
+        int day = classinfo.getDay();
+
+        if(mwf == 1){
+            changeColor(begin,end,"Mon",classinfo);changeColor(begin,end,"Wed",classinfo);changeColor(begin,end,"Fri",classinfo);
+        }
+        if(tt == 1){
+            changeColor(begin,end,"Tue",classinfo);
+            changeColor(begin,end,"Thu",classinfo);
+        }
+        if(mwf ==0 && tt ==0){
+            switch (day) {
+                case 0:
+                    changeColor(begin, end, "Mon", classinfo);
+                    break;
+                case 1:
+                    changeColor(begin, end, "Tue", classinfo);
+                    break;
+                case 2:
+                    changeColor(begin, end, "Wed", classinfo);
+                    break;
+                case 3:
+                    changeColor(begin, end, "Thu", classinfo);
+                    break;
+                case 4:
+                    changeColor(begin, end, "Fri", classinfo);
+                    break;
+                case 5:
+                    changeColor(begin, end, "Sat", classinfo);
+                    break;
+                case 6:
+                    changeColor(begin, end, "Sun", classinfo);
+                    break;
+
+                default:
+                    break;
+            }
+        }
 
     }
-
-    public void changeColor(double begin, double end, String day ){
+    public void changeColor(double begin, double end, String day,Classinfo classinfo){
         for (double i = begin; i < end; i = i + 0.5) {
             String btnID = day + Double.toString(i);
-            //System.out.println(btnID);
-            //System.out.println(endTime);
             int resID = getResources().getIdentifier(btnID, "id", getPackageName());
             Button btn = (Button) findViewById(resID);
-            int red=0xffff0000;
-            btn.setBackgroundColor(red);
+            btn.setText(classinfo.getClassName());
+            btn.setTextColor(0xff000000);
+            btn.setBackgroundColor(0xffffff00);
         }
     }
 
@@ -160,13 +210,10 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
         }
 
         if(i.getItemId()==R.id.nav_print){
-//          View view = findViewById(R.id.textView22);
             View view = findViewById(R.id.Schedule);
-//            view.setDrawingCacheEnabled(true);
-            Bitmap bitmap = ViewToBitmap(view);//Bitmap.createBitmap(view.getDrawingCache());
+            Bitmap bitmap = ViewToBitmap(view);
             PrintHelper photoPrinter = new PrintHelper(this);
             photoPrinter.setScaleMode(PrintHelper.SCALE_MODE_FIT);
-//           Bitmap bi = BitmapFactory.decodeResource(getResources(),R.drawable.kitten);
             photoPrinter.printBitmap("Class Schedule", bitmap);
             Toast.makeText(getApplicationContext(),"Loading",Toast.LENGTH_SHORT).show();
             //  sample code from android studio documentation https://developer.android.com/training/printing/photos
