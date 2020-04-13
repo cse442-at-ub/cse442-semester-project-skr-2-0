@@ -9,9 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.myfirstapp.DatabaseHelper;
 import com.example.myfirstapp.R;
 
 public class editTestPag extends AppCompatActivity {
@@ -26,7 +24,7 @@ public class editTestPag extends AppCompatActivity {
     private String classNameT;
     private String dayT;
     private String yearT;
-    DatabaseHelper mDatabaseHelper;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +79,7 @@ public class editTestPag extends AppCompatActivity {
                     output.setText("Error: Invalid Year");
                     output.setVisibility(visibility ? View.VISIBLE : View.GONE);
                 }
-                else if (Integer.parseInt(dayT) > 31 && Integer.parseInt(dayT) > 0){
+                else if(Integer.parseInt(dayT) > 30){
                     output.setText("Error: Invalid Day");
                     output.setVisibility(visibility ? View.VISIBLE : View.GONE);
                 }
@@ -91,7 +89,7 @@ public class editTestPag extends AppCompatActivity {
             }
         });
 
-        mDatabaseHelper = new DatabaseHelper(this);
+
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
@@ -103,25 +101,16 @@ public class editTestPag extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    //change storing to store in SQLite database
     public void submit(View v){
         //stores the data and prints it
         //Exam a = new Exam(classNameT, Integer.parseInt(monthT), Integer.parseInt(dayT), Integer.parseInt(yearT));
-        /*
         Intent resultIntent = new Intent();
         resultIntent.putExtra("className", classNameT);
         resultIntent.putExtra("month", monthT);
         resultIntent.putExtra("day", dayT);
         resultIntent.putExtra("year", yearT);
         setResult(RESULT_OK, resultIntent);
-
-         */
-        AddData(classNameT, monthT, dayT, yearT);
-        Intent resultIntent = new Intent();
-        resultIntent.putExtra("reload", true);
-        setResult(RESULT_OK, resultIntent);
-
-
+        //startActivity(new Intent(editTestPage.this, TestPage.class));
         this.finish();
     }
 
@@ -133,25 +122,6 @@ public class editTestPag extends AppCompatActivity {
             }
         }
         return true;
-    }
-
-    //Database stuff
-    public void AddData(String cN, String mon, String d, String yr){
-        //addData crashes me ahh
-        boolean insertData = mDatabaseHelper.addData(cN, mon, d, yr);
-
-        if(insertData){
-            toastM("Data Successfully Inserted!");
-        }
-        else{
-            toastM("Something went wrong");
-        }
-
-
-    }
-
-    private void toastM(String message){
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
 }
