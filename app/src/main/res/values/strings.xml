@@ -47,4 +47,6 @@
         <item>Saturday</item>
         <item>Sunday</item>
     </string-array>
+    <string name="title_activity_edit_existing_tests">editExistingTests</string>
+>>>>>>> origin/addingExamsDebug
 </resources>
