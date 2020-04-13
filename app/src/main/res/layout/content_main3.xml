@@ -28,7 +28,6 @@
         android:layout_width="0dp"
         android:layout_height="20dp"
         android:background="#FFEB3B"
-        android:gravity="center"
         android:text="CurrentDate"
         android:textColor="#030303"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,11 +35,78 @@
         app:layout_constraintStart_toStartOf="@+id/nav_host_fragment"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        app:layout_constraintEnd_toEndOf="@+id/nav_host_fragment"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/nav_host_fragment"
+        app:layout_constraintTop_toBottomOf="@+id/textView22">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="38dp"
+            android:layout_height="19dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/Monday"
+            android:layout_width="53dp"
+            android:layout_height="19dp"
+            android:baselineAligned="false"
+            android:gravity="center_horizontal"
+            android:text="@string/mon" />
+
+        <TextView
+            android:id="@+id/Tuesday"
+            android:layout_width="53dp"
+            android:layout_height="19dp"
+            android:gravity="center_horizontal"
+            android:text="@string/tue" />
+
+        <TextView
+            android:id="@+id/Wednesday"
+            android:layout_width="53dp"
+            android:layout_height="19dp"
+            android:gravity="center_horizontal"
+            android:text="@string/wed" />
+
+        <TextView
+            android:id="@+id/Thursday"
+            android:layout_width="53dp"
+            android:layout_height="19dp"
+            android:gravity="center_horizontal"
+            android:text="@string/thu" />
+
+        <TextView
+            android:id="@+id/Friday"
+            android:layout_width="53dp"
+            android:layout_height="19dp"
+            android:gravity="center_horizontal"
+            android:text="@string/fri" />
+
+        <TextView
+            android:id="@+id/Saturday"
+            android:layout_width="53dp"
+            android:layout_height="19dp"
+            android:gravity="center_horizontal"
+            android:text="@string/sat" />
+
+        <TextView
+            android:id="@+id/Sunday"
+            android:layout_width="53dp"
+            android:layout_height="19dp"
+            android:gravity="center_horizontal"
+            android:text="@string/sun" />
+
+    </LinearLayout>
+
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/nav_host_fragment"
-        app:layout_constraintTop_toBottomOf="@+id/textView22">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -260,14 +326,6 @@
                 tools:layout_editor_absoluteX="81dp"
                 tools:layout_editor_absoluteY="-100dp">
 
-                <TextView
-                    android:id="@+id/Monday"
-                    android:layout_width="53dp"
-                    android:layout_height="19dp"
-                    android:baselineAligned="false"
-                    android:gravity="center_horizontal"
-                    android:text="@string/mon" />
-
                 <Button
                     android:id="@+id/Mon8.0"
                     android:layout_width="match_parent"
@@ -377,61 +435,61 @@
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Mon17.0"
+                    android:id="@+id/FivePMon"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Mon17.5"
+                    android:id="@+id/FiveHalfPMon"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Mon18.0"
+                    android:id="@+id/SixPMon"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Mon18.5"
+                    android:id="@+id/SixHalfPMon"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Mon19.0"
+                    android:id="@+id/SevenPMon"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Mon19.5"
+                    android:id="@+id/SevenHalfPMon"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Mon20.0"
+                    android:id="@+id/EightPMon"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Mon20.5"
+                    android:id="@+id/EightHalfPMon"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Mon21.0"
+                    android:id="@+id/NinePMon"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Mon21.5"
+                    android:id="@+id/NineHalfPMon"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
@@ -444,13 +502,6 @@
                 android:orientation="vertical"
                 tools:layout_editor_absoluteX="81dp"
                 tools:layout_editor_absoluteY="-100dp">
-
-                <TextView
-                    android:id="@+id/Tuesday"
-                    android:layout_width="53dp"
-                    android:layout_height="19dp"
-                    android:gravity="center_horizontal"
-                    android:text="@string/tue" />
 
                 <Button
                     android:id="@+id/Tue8.0"
@@ -561,61 +612,61 @@
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Tue17.0"
+                    android:id="@+id/FivePTue"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Tue17.5"
+                    android:id="@+id/FiveHalfPTue"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Tue18.0"
+                    android:id="@+id/SixPTue"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Tue18.5"
+                    android:id="@+id/SixHalfPTue"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Tue19.0"
+                    android:id="@+id/SevenPTue"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Tue19.5"
+                    android:id="@+id/SevenHalfPTue"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Tue20.0"
+                    android:id="@+id/EightPTue"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Tue20.5"
+                    android:id="@+id/EightHalfPTue"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Tue21.0"
+                    android:id="@+id/NinePTue"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Tue21.5"
+                    android:id="@+id/NineHalfPTue"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
@@ -628,13 +679,6 @@
                 android:orientation="vertical"
                 tools:layout_editor_absoluteX="81dp"
                 tools:layout_editor_absoluteY="-100dp">
-
-                <TextView
-                    android:id="@+id/Wednesday"
-                    android:layout_width="53dp"
-                    android:layout_height="19dp"
-                    android:gravity="center_horizontal"
-                    android:text="@string/wed" />
 
                 <Button
                     android:id="@+id/Wed8.0"
@@ -745,61 +789,61 @@
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Wed17.0"
+                    android:id="@+id/FivePWed"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Wed17.5"
+                    android:id="@+id/FiveHalfPWed"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Wed18.0"
+                    android:id="@+id/SixPWed"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Wed18.5"
+                    android:id="@+id/SixHalfPWed"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Wed19.0"
+                    android:id="@+id/SevenPWed"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Wed19.5"
+                    android:id="@+id/SevenHalfPWed"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Wed20.0"
+                    android:id="@+id/EightPWed"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Wed20.5"
+                    android:id="@+id/EightHalfPWed"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Wed21.0"
+                    android:id="@+id/NinePWed"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Wed21.5"
+                    android:id="@+id/NineHalfPWed"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
@@ -812,13 +856,6 @@
                 android:orientation="vertical"
                 tools:layout_editor_absoluteX="81dp"
                 tools:layout_editor_absoluteY="-100dp">
-
-                <TextView
-                    android:id="@+id/Thursday"
-                    android:layout_width="53dp"
-                    android:layout_height="19dp"
-                    android:gravity="center_horizontal"
-                    android:text="@string/thu" />
 
                 <Button
                     android:id="@+id/Thu8.0"
@@ -917,7 +954,7 @@
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Thu16.0"
+                    android:id="@+id/FourPThu16.0"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
@@ -929,61 +966,61 @@
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Thu17.0"
+                    android:id="@+id/FivePThu"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Thu17.5"
+                    android:id="@+id/FiveHalfPThu"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Thu18.0"
+                    android:id="@+id/SixPThu"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Thu18.5"
+                    android:id="@+id/SixHalfPThu"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Thu19.0"
+                    android:id="@+id/SevenPThu"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Thu19.5"
+                    android:id="@+id/SevenHalfPThu"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Thu20.0"
+                    android:id="@+id/EightPThu"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Thu20.5"
+                    android:id="@+id/EightHalfPThu"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Thu21.0"
+                    android:id="@+id/NinePThu"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Thu21.5"
+                    android:id="@+id/NineHalfPThu"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
@@ -996,13 +1033,6 @@
                 android:orientation="vertical"
                 tools:layout_editor_absoluteX="81dp"
                 tools:layout_editor_absoluteY="-100dp">
-
-                <TextView
-                    android:id="@+id/Friday"
-                    android:layout_width="53dp"
-                    android:layout_height="19dp"
-                    android:gravity="center_horizontal"
-                    android:text="@string/fri" />
 
                 <Button
                     android:id="@+id/Fri8.0"
@@ -1113,61 +1143,61 @@
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Fri17.0"
+                    android:id="@+id/FivePFri"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Fri17.5"
+                    android:id="@+id/FiveHalfPFri"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Fri18.0"
+                    android:id="@+id/SixPFri"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Fri18.5"
+                    android:id="@+id/SixHalfPFri"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Fri19.0"
+                    android:id="@+id/SevenPFri"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Fri19.5"
+                    android:id="@+id/SevenHalfPFri"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Fri20.0"
+                    android:id="@+id/EightPFri"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Fri20.5"
+                    android:id="@+id/EightHalfPFri"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Fri21.0"
+                    android:id="@+id/NinePFri"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Fri21.5"
+                    android:id="@+id/NineHalfPFri"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
@@ -1181,177 +1211,170 @@
                 tools:layout_editor_absoluteX="81dp"
                 tools:layout_editor_absoluteY="-100dp">
 
-                <TextView
-                    android:id="@+id/Saturday"
-                    android:layout_width="53dp"
-                    android:layout_height="19dp"
-                    android:gravity="center_horizontal"
-                    android:text="@string/sat" />
-
                 <Button
-                    android:id="@+id/Sat8.0"
+                    android:id="@+id/EightSat"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sat8.5"
+                    android:id="@+id/EightHalfSat"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sat9.0"
+                    android:id="@+id/NineSat"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sat9.5"
+                    android:id="@+id/NineHalfSat"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sat10.0"
+                    android:id="@+id/TenSat"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sat10.5"
+                    android:id="@+id/TenHalfSat"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sat11.0"
+                    android:id="@+id/ElevenSat"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sat11.5"
+                    android:id="@+id/ElevenHalfSat"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sat12.0"
+                    android:id="@+id/TwelvePSat"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sat12.5"
+                    android:id="@+id/TwelveHalfPSat"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sat13.0"
+                    android:id="@+id/onePSat"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sat13.5"
+                    android:id="@+id/oneHalfPSat"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sat14.0"
+                    android:id="@+id/twoPSat"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sat14.5"
+                    android:id="@+id/twoHalfPSat"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sat15.0"
+                    android:id="@+id/ThreePSat"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sat15.5"
+                    android:id="@+id/ThreeHalfPSat"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sat16.0"
+                    android:id="@+id/FourPSat"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sat16.5"
+                    android:id="@+id/fourHalfPSat"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sat17.0"
+                    android:id="@+id/FivePSat"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sat17.5"
+                    android:id="@+id/FiveHalfPSat"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sat18.0"
+                    android:id="@+id/SixPSat"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sat18.5"
+                    android:id="@+id/SixHalfPSat"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sat19.0"
+                    android:id="@+id/SevenPSat"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sat19.5"
+                    android:id="@+id/SevenHalfPSat"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sat20.0"
+                    android:id="@+id/EightPSat"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sat20.5"
+                    android:id="@+id/EightHalfPSat"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sat21.0"
+                    android:id="@+id/NinePSat"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sat21.5"
+                    android:id="@+id/NineHalfPSat"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
@@ -1365,177 +1388,170 @@
                 tools:layout_editor_absoluteX="81dp"
                 tools:layout_editor_absoluteY="-100dp">
 
-                <TextView
-                    android:id="@+id/Sunday"
-                    android:layout_width="53dp"
-                    android:layout_height="19dp"
-                    android:gravity="center_horizontal"
-                    android:text="@string/sun" />
-
                 <Button
-                    android:id="@+id/Sun8.0"
+                    android:id="@+id/EightSun"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sun8.5"
+                    android:id="@+id/EightHalfSun"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sun9.0"
+                    android:id="@+id/NineSun"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sun9.5"
+                    android:id="@+id/NineHalfSun"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sun10.0"
+                    android:id="@+id/TenSun"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sun10.5"
+                    android:id="@+id/TenHalfSun"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sun11.0"
+                    android:id="@+id/ElevenSun"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sun11.5"
+                    android:id="@+id/ElevenHalfSun"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sun12.0"
+                    android:id="@+id/TwelvePSun"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sun12.5"
+                    android:id="@+id/TwelveHalfPSun"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sun13.0"
+                    android:id="@+id/onePSun"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sun13.5"
+                    android:id="@+id/oneHalfPSun"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sun14.0"
+                    android:id="@+id/twoPSun"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sun14.5"
+                    android:id="@+id/twoHalfPSun"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sun15.0"
+                    android:id="@+id/ThreePSun"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sun15.5"
+                    android:id="@+id/ThreeHalfPSun"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sun16.0"
+                    android:id="@+id/FourPSun"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sun16.5"
+                    android:id="@+id/fourHalfPSun"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sun17.0"
+                    android:id="@+id/FivePSun"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sun17.5"
+                    android:id="@+id/FiveHalfPSun"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sun18.0"
+                    android:id="@+id/SixPSun"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sun18.5"
+                    android:id="@+id/SixHalfPSun"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sun19.0"
+                    android:id="@+id/SevenPSun"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sun19.5"
+                    android:id="@+id/SevenHalfPSun"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sun20.0"
+                    android:id="@+id/EightPSun"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sun20.5"
+                    android:id="@+id/EightHalfPSun"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sun21.0"
+                    android:id="@+id/NinePSun"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/Sun21.5"
+                    android:id="@+id/NineHalfPSun"
                     android:layout_width="match_parent"
                     android:layout_height="38dp"
                     android:text="" />
