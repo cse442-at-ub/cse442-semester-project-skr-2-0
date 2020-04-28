@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import com.example.myfirstapp.ui.home.TestDate;
@@ -15,6 +16,7 @@ import com.example.myfirstapp.ui.home.TestPage;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -82,9 +84,12 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
             public void onClick(View v) {
                 Intent addIntent = new Intent(getApplicationContext(), Main2Activity.class);
                 startActivity(addIntent);
+
             }
         });
         //load db
+
+        setButtonListener(Main2Activity.giveMeTheList());
 
         ArrayList<Classinfo> go= Main2Activity.giveMeTheList();
         if(!go.isEmpty()) {
@@ -92,40 +97,10 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
                 setClassView(classinfo);
             }
         }
+
     }
 
 
-//    private void load(){
-//            Cursor cursor;
-//            SQLiteDatabase sqLiteDatabase = db.getWritableDatabase();
-//            if(true){
-//                cursor = sqLiteDatabase.rawQuery("select*from class",null);
-//            }
-//            if(cursor.moveToFirst()){
-//                String className = cursor.getString(cursor.getColumnIndex("class_name"));
-//                String classRoom= cursor.getString(cursor.getColumnIndex("class_room"));
-//                int weekly = cursor.getInt(cursor.getColumnIndex("dayinweek"));
-//                double start = cursor.getDouble(cursor.getColumnIndex("start"));
-//                double over = cursor.getDouble(cursor.getColumnIndex("over"));
-//                int mwf = cursor.getInt(cursor.getColumnIndex("mwf"));
-//                int tt = cursor.getInt(cursor.getColumnIndex("tt"));
-//                Classinfo classinfo = new Classinfo(className,classRoom,weekly,start,over,mwf,tt);
-//                classinfoArrayList.add(classinfo);
-//
-//                while(cursor.moveToNext()){
-//                    String className_ = cursor.getString(cursor.getColumnIndex("class_name"));
-//                    String classRoom_= cursor.getString(cursor.getColumnIndex("class_room"));
-//                    int weekly_ = cursor.getInt(cursor.getColumnIndex("dayinweek"));
-//                    double start_ = cursor.getDouble(cursor.getColumnIndex("start"));
-//                    double over_ = cursor.getDouble(cursor.getColumnIndex("over"));
-//                    int mwf_ = cursor.getInt(cursor.getColumnIndex("mwf"));
-//                    int tt_ = cursor.getInt(cursor.getColumnIndex("tt"));
-//                    Classinfo classinfo_ = new Classinfo(className_,classRoom_,weekly_,start_,over_,mwf_,tt_);
-//                    classinfoArrayList.add(classinfo_);
-//                }
-//            }
-//                cursor.close();
-//        }
 
     public void setClassView(Classinfo classinfo){
         double begin = classinfo.getStart();
@@ -182,7 +157,56 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
         }
     }
 
+    public void setButtonListener(final ArrayList<Classinfo> classinfo){
+        final double begin = 8.0;
+        final double end =21.5;
+        final String days[] = {"Mon","Tue","Wed","Thu","Fri","Sat","Sun"};
+        for(int i = 0 ; i< days.length;i++){
+            for(double j = begin;j<end;j = j+ 0.5){
+                String BtnID = days[i]+Double.toString(j);
+                int resID = getResources().getIdentifier(BtnID, "id", getPackageName());
+                final Button btn = (Button) findViewById(resID);
+                btn.setBackgroundResource(android.R.drawable.btn_default_small);
+                btn.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
+                        String x = btn.getText().toString();
+                        boolean ifexist = false;
+                        for (int i = 0; i<classinfo.size();i++){   // check if current button has a name.
+                            String Tem = classinfo.get(i).getClassName();
+                            if (Tem == x){
+                                ifexist = true;
+                                classinfo.remove(i);
+                            }
+                        }
+                        if(ifexist == false){
+                            Toast.makeText(Main3Activity.this,"You don't have class at this time !",Toast.LENGTH_SHORT).show();
+                            btn.setBackgroundResource(android.R.drawable.btn_default_small);
+                            btn.setText("");
+                            return true;
+                        }else if (ifexist == true){
+                            for(int i = 0 ; i <days.length;i++){
+                                for(double j = begin;j<end;j = j+ 0.5){
+                                    String Button = days[i]+Double.toString(j);
+                                    int ID = getResources().getIdentifier(Button, "id", getPackageName());
+                                    Button dbtn = (Button) findViewById(ID);
+                                    if(dbtn.getText() == x){
+                                        dbtn.setBackgroundResource(android.R.drawable.btn_default_small);
+                                        dbtn.setText("");
 
+                                    }
+                                }
+                            }
+                                Toast.makeText(Main3Activity.this,"Deleted !!",Toast.LENGTH_SHORT).show();
+                                return true;
+                        }
+
+                        return true;
+                    }
+                });
+            }
+        }
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
