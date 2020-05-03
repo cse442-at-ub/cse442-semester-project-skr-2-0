@@ -22,6 +22,7 @@ import java.util.Calendar;
 
 public class Main2Activity extends AppCompatActivity {
     private static ArrayList<Classinfo> classInfoArrayList = new ArrayList<Classinfo>();
+    private ClassDataBase classDataBase = new ClassDataBase(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -83,8 +84,9 @@ public class Main2Activity extends AppCompatActivity {
                         Toast.makeText(Main2Activity.this,"Exceed time limit",Toast.LENGTH_SHORT).show();
                     }else{
                         Intent submitIntent = new Intent(getApplicationContext(), Main3Activity.class);
-                        Classinfo classinfo = new Classinfo(name,room,day,begin,end,ismwf,istt);
+                        Classinfo classinfo = new Classinfo(name,room,day,begin,end,ismwf,istt,"");
                         classInfoArrayList.add(classinfo);
+                        store(classinfo);
                         double bein = classinfo.getStart();
                         startActivity(submitIntent);
                     }
@@ -93,6 +95,14 @@ public class Main2Activity extends AppCompatActivity {
             }
         });
     }
+
+
+    public void store(Classinfo classinfo){
+        SQLiteDatabase sqLiteDatabase = classDataBase.getWritableDatabase();
+        String[] x = {classinfo.getClassName(), classinfo.getClassRoom(), classinfo.getDay()+"", classinfo.getStart()+"", classinfo.getOver()+"", classinfo.getMwf()+"", classinfo.getTT()+""};
+        sqLiteDatabase.execSQL("insert into class_schedule (NAME,ROOM,DAY,BG,OVER,MWF,TT)" + "values(?, ?, ?, ?, ?, ?, ?)", x);
+    }
+
 
     public boolean isTimeValid(String time) {
         double res;
@@ -125,14 +135,10 @@ public class Main2Activity extends AppCompatActivity {
     public static ArrayList<Classinfo> giveMeTheList(){
         return classInfoArrayList;
     }
-
-//    public void save(Classinfo classinfo){
-//        SQLiteDatabase sqLiteDatabase = db.getWritableDatabase();
-//        String path = "insert into class(class_name,class_room,dayinweek,start, over, mwf,tt) ";
-//        String value = "values(?, ?, ?, ?, ?, ?,?)";
-//        String[] info={classinfo.getClassName(),classinfo.getClassRoom(),classinfo.getDay()+"",classinfo.getStart()+"",classinfo.getOver()+"",classinfo.getMwf()+"",classinfo.getTT()+""};
-//        sqLiteDatabase.execSQL(path + value,info);
-//    }
+    public static  ArrayList<Classinfo> addclass(Classinfo classinfo){
+        classInfoArrayList.add(classinfo);
+        return classInfoArrayList;
+    }
 
     @Override
     public boolean onSupportNavigateUp(){

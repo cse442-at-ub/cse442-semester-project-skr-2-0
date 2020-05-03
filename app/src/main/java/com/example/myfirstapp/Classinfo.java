@@ -11,10 +11,11 @@ public class Classinfo implements Serializable {
     private double over;
     private int mwf;
     private int tt;
+    private String note;
 
 
-    public Classinfo(String className, String classRoom, int day, double begin, double over, int mwf, int tt){
-        this.className = className;this.classRoom = classRoom;this.day = day;this.begin=begin;this.over = over;this.mwf=mwf;this.tt = tt;
+    public Classinfo(String className, String classRoom, int day, double begin, double over, int mwf, int tt,String Note){
+        this.className = className;this.classRoom = classRoom;this.day = day;this.begin=begin;this.over = over;this.mwf=mwf;this.tt = tt;this.note = Note;
     }
 
     public String getClassName(){
@@ -49,5 +50,11 @@ public class Classinfo implements Serializable {
     public void setMwf(int Mwf){this.mwf = Mwf;}
     public int getTT(){return this.tt;}
     public void setTT(int TT){this.tt = TT;}
+    public String getNote(){
+        return this.note;
+    }
+    public void setNote(String Note){
+        this.note = Note;
+    }
 
 }
