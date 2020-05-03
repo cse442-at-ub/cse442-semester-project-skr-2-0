@@ -47,8 +47,7 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
 
     private AppBarConfiguration mAppBarConfiguration;
 
-    private ClassDataBase db= new ClassDataBase(this,"classDateBase.qb",null,1);
-
+    private ClassDataBase classDataBase = new ClassDataBase(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,10 +86,9 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
 
             }
         });
-        //load db
 
         setButtonListener(Main2Activity.giveMeTheList());
-
+        load();//load db
         ArrayList<Classinfo> go= Main2Activity.giveMeTheList();
         if(!go.isEmpty()) {
             for (Classinfo classinfo : go) {
@@ -177,6 +175,10 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
                             if (Tem == x){
                                 ifexist = true;
                                 classinfo.remove(i);
+                                SQLiteDatabase sqLiteDatabase =  classDataBase.getWritableDatabase();
+                                String[] blank = {Tem};
+                                String delete = "delete from class_schedule where NAME = ?";
+                                sqLiteDatabase.execSQL(delete,blank);
                             }
                         }
                         if(ifexist == false){
@@ -253,5 +255,37 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
         view.draw(canvas);
         return image;
     }
+
+    public void load(){
+        Main2Activity.giveMeTheList().clear();
+        SQLiteDatabase sqLiteDatabase = classDataBase.getWritableDatabase();
+        String x = "select * from class_schedule";
+        Cursor cursor = sqLiteDatabase.rawQuery(x,null);
+        if(cursor.moveToFirst()){
+            String class_name = cursor.getString(cursor.getColumnIndex("NAME"));
+            String class_room = cursor.getString(cursor.getColumnIndex("ROOM"));
+            int class_day = Integer.parseInt(cursor.getString(cursor.getColumnIndex("DAY")));
+            double class_begin = Double.parseDouble(cursor.getString(cursor.getColumnIndex("BG")));
+            double class_over = Double.parseDouble(cursor.getString(cursor.getColumnIndex("OVER")));
+            int mwf = Integer.parseInt(cursor.getString(cursor.getColumnIndex("MWF")));
+            int tt = Integer.parseInt(cursor.getString(cursor.getColumnIndex("TT")));
+            Classinfo classinfo = new Classinfo(class_name,class_room,class_day,class_begin,class_over,mwf,tt,"");
+            Main2Activity.addclass(classinfo);
+            while(cursor.moveToNext()){
+                String class_name0 = cursor.getString(cursor.getColumnIndex("NAME"));
+                String class_room0 = cursor.getString(cursor.getColumnIndex("ROOM"));
+                int class_day0 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("DAY")));
+                double class_begin0 = Double.parseDouble(cursor.getString(cursor.getColumnIndex("BG")));
+                double class_over0 = Double.parseDouble(cursor.getString(cursor.getColumnIndex("OVER")));
+                int mwf0 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("MWF")));
+                int tt0 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("TT")));
+                Classinfo classinfo0 = new Classinfo(class_name0,class_room0,class_day0,class_begin0,class_over0,mwf0,tt0,"");
+                Main2Activity.addclass(classinfo0);
+            };
+        }
+        cursor.close();
+
+    }
+
 
 }
