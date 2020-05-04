@@ -85,18 +85,7 @@ public class editExistingTests extends AppCompatActivity {
                 yearT = editable_4.getText().toString();
                 //Everything above is working
 
-/*
-                if (monthT.length() > 2 || dayT.length() > 2 || yearT.length() > 4) {//This works
-                    toastMessage("Error: Date Lengths");
-                } else if (!allNum(monthT) || !allNum(dayT) || !allNum(yearT)) {//This works
-                    toastMessage("Error: Invalid Characters");
-                } else if (Integer.parseInt(monthT) > 12 || Integer.parseInt(monthT) < 1) {
-                    toastMessage("Error: Invalid Month Input");
-                } else {
-*/
-                //if (monthT.length() > 2 || dayT.length() > 2 || yearT.length() > 4) {//This works
-                //    toastMessage("Error: Date Lengths");
-                //}else{
+
                 if (!classNameT.equals("")) {
                     mDatabaseHelper.updateName(classNameT, selectedID, selectedName);
                 }
@@ -187,31 +176,31 @@ public class editExistingTests extends AppCompatActivity {
 
     //helper method
     public String numToMonth(String i){
-        if (i.equals("1")){
+        if (i.equals("01") || i.equals("1")){
             return "Jan";
         }
-        if (i.equals("2")){
+        if (i.equals("02") || i.equals("2")){
             return "Feb";
         }
-        if (i.equals("3")){
+        if (i.equals("03") || i.equals("3")){
             return "Mar";
         }
-        if (i.equals("4")){
+        if (i.equals("04") || i.equals("4")){
             return "Apr";
         }
-        if (i.equals("5")){
+        if (i.equals("05") || i.equals("5")){
             return "May";
         }
-        if (i.equals("6")){
+        if (i.equals("06") || i.equals("6")){
             return "Jun";
         }
-        if (i.equals("7")){
+        if (i.equals("07") || i.equals("7")){
             return "Jul";
         }
-        if (i.equals("8")){
+        if (i.equals("08") || i.equals("8")){
             return "Aug";
         }
-        if (i.equals("9")){
+        if (i.equals("09") || i.equals("9")){
             return "Sep";
         }
         if (i.equals("10")){
