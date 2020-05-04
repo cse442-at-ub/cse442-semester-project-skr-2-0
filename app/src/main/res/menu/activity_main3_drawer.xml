@@ -18,9 +18,9 @@
             android:icon="@android:drawable/ic_menu_view"
             android:title="Print" />
         <item
-            android:id="@+id/nav.share"
+            android:id="@+id/nav.course"
             android:icon="@android:drawable/ic_menu_share"
-            android:title="Share" />
+            android:title="All courses" />
         <item
             android:id="@+id/nav.logout"
             android:icon="@android:drawable/ic_delete"
