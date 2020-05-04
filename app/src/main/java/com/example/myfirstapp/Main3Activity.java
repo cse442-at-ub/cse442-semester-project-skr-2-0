@@ -1,6 +1,5 @@
 package com.example.myfirstapp;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -8,23 +7,19 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
+import com.example.myfirstapp.ui.home.Courses;
+import com.example.myfirstapp.ui.home.MainFragment;
 import com.example.myfirstapp.ui.home.TestDate;
 import com.example.myfirstapp.ui.home.TestPage;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -45,6 +40,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.DateFormat;
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -71,7 +67,7 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home,R.id.nav_test,R.id.nav_share,R.id.nav_print,R.id.nav_logout)
+                R.id.nav_home,R.id.nav_test,R.id.nav_course,R.id.nav_print,R.id.nav_logout)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -234,12 +230,16 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
                         boolean ifexist = false;
                         for (int i = 0; i<classinfo.size();i++) {   // check if current button has a name.
                             String Tem = classinfo.get(i).getClassName();
+                            Classinfo course = classinfo.get(i);
                             if (Tem == x) {
                                 ifexist = true;
                                 index = i;
                             }
                         }
                             if (ifexist){
+
+
+
                                 ShowPopup(v, index);
                             }
                             else{
@@ -327,10 +327,18 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
     }
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem i) {
+
+        if(i.getItemId()==R.id.nav_course){
+            Intent in=new Intent(Main3Activity.this, Courses.class);
+            startActivity(in);
+        }
+
         if(i.getItemId()==R.id.nav_logout){
             Intent in=new Intent(Main3Activity.this,MainActivity.class);
             startActivity(in);
         }
+
+
         if(i.getItemId()==R.id.nav_test){
             Intent in=new Intent(Main3Activity.this,TestPage.class);
             startActivity(in);

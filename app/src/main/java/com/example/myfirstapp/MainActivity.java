@@ -60,8 +60,8 @@ public class MainActivity extends AppCompatActivity {               // login pag
             @Override
             public void onClick(View v) {
                 userLogin();
-                // Intent startIntent = new Intent(getApplicationContext(), Main3Activity.class);
-                // startActivity(startIntent);
+               // Intent startIntent = new Intent(getApplicationContext(), Main3Activity.class);
+               //  startActivity(startIntent);
             }
         });
     }
