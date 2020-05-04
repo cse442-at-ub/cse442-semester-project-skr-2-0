@@ -19,6 +19,7 @@ import com.example.myfirstapp.ui.home.TestPage;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -53,6 +54,8 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
 
     private ClassDataBase classDataBase = new ClassDataBase(this);
 
+    private TextView textViewUsername, textViewUserEmail; //added by fuming
+
     Dialog myDialog;
     AlertDialog alertDiag;
 
@@ -60,6 +63,7 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -105,6 +109,13 @@ public class Main3Activity extends AppCompatActivity implements NavigationView.O
         }
 
         myDialog = new Dialog(this);
+
+        //added by fuming
+        //NavigationView nV = (NavigationView) findViewById(R.id.nav_view);
+        //View headerView = nV.getHeaderView(0);
+        //textViewUsername = (TextView) headerView.findViewById(R.id.textViewHeaderUsernam);
+        //textViewUsername.setText(SharedPreManager.getInstance(this).getUsername());
+
     }
 
 
