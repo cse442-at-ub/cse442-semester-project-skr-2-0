@@ -138,7 +138,7 @@ public class TestPage extends AppCompatActivity {
         ArrayList<String> listData = new ArrayList<String>();
 
         while(data.moveToNext()){
-            String fullInfo = data.getString(1) + " Date: " + numToMonth(data.getString(2)) + " " +
+            String fullInfo = data.getString(1) + " Date: " + data.getString(2) + " " +
                     data.getString(3) + " " + data.getString(4);
             //set a different for each dataset???
             /*
