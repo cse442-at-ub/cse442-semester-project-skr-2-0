@@ -137,8 +137,9 @@ public class editTestPag extends AppCompatActivity {
 
     //Database stuff
     public void AddData(String cN, String mon, String d, String yr){
+
         //addData crashes me ahh
-        boolean insertData = mDatabaseHelper.addData(cN, mon, d, yr);
+        boolean insertData = mDatabaseHelper.addData(cN, numToMonth(mon), d, yr);
 
         if(insertData){
             toastM("Data Successfully Inserted!");
@@ -152,6 +153,46 @@ public class editTestPag extends AppCompatActivity {
 
     private void toastM(String message){
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    public String numToMonth(String i){
+        if (i.equals("01") || i.equals("1")){
+            return "Jan";
+        }
+        if (i.equals("02") || i.equals("2")){
+            return "Feb";
+        }
+        if (i.equals("03") || i.equals("3")){
+            return "Mar";
+        }
+        if (i.equals("04") || i.equals("4")){
+            return "Apr";
+        }
+        if (i.equals("05") || i.equals("5")){
+            return "May";
+        }
+        if (i.equals("06") || i.equals("6")){
+            return "Jun";
+        }
+        if (i.equals("07") || i.equals("7")){
+            return "Jul";
+        }
+        if (i.equals("08") || i.equals("8")){
+            return "Aug";
+        }
+        if (i.equals("09") || i.equals("9")){
+            return "Sep";
+        }
+        if (i.equals("10")){
+            return "Oct";
+        }
+        if (i.equals("11")){
+            return "Nov";
+        }
+        if (i.equals("12")){
+            return "Dec";
+        }
+        return i;
     }
 
 }

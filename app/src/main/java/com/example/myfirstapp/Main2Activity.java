@@ -140,9 +140,15 @@ public class Main2Activity extends AppCompatActivity {
         return classInfoArrayList;
     }
 
+    public static void setNoteatIndex(int index, String note){
+        classInfoArrayList.get(index).setNote(note);
+    }
+
     @Override
     public boolean onSupportNavigateUp(){
         finish();
         return true;
     }
+
+
 }
